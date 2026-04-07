@@ -27,7 +27,6 @@ python localserver.py --port 8000 --dir .
 | `--dir` | Directory to serve | Current directory |
 | `--auto-port` | Auto-select a free port if the chosen one is busy | Off |
 
-## Tested on
-- Android (Termux)
-- Linux
-- Probably your smart fridge
+I dont know how to do screenshots for this.
+
+The index.html in this project is a test of the app. 
