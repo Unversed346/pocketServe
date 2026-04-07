@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Fire 7 Server</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 40px;
+        }
+        h1 { color: #333; }
+        button {
+           padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Fire 7 Server Test Page</h1>
+
+<p>Click the buttons to test interactions:</p>
+
+<button onclick="showTime()">Show Current Time</button>
+<button onclick="incrementCounter()">Increment Counter</button>
+<button onclick="fetchServerMessage()">Fetch Server Message</button>
+
+<div id="output">
+    <p>Output will appear here...</p>
+</div>
+
+<script>
+    // Counter example
+    let counter = 0;
+
+    function showTime() {
+        const now = new Date();
+        document.getElementById("output").innerHTML =
+            "Current Time: " + now.toLocaleTimeString();
+    }
+
+    function incrementCounter() {
+        counter++;
+        document.getElementById("output").innerHTML =
+            "Counter: " + counter;
+    }
+
+    // Example: fetch data from Python server
+    async function fetchServerMessage() {
+        try {
+            const response = await fetch('message.txt'); // simple text file on server
+            if (!response.ok) throw new Error('File not found!');
+            const text = await response.text();
+            document.getElementById("output").innerHTML = "Server says: " + text;
+        } catch (err) {
+            document.getElementById("output").innerHTML =
+                "Error fetching message.txt: " + err.message;
+        }
+    }
+</script>
+
+</body>
+</html>
