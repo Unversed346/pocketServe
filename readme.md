@@ -12,7 +12,7 @@ built for Android via Termux but works on any device with Python installed.
 ## Installation
 ```bash
 git clone https://github.com/Unversed346/pocketServe.git
-cd pocketserve
+cd pocketServe
 ```
 
 ## Usage
